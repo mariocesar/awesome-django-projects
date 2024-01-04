@@ -6,3 +6,20 @@ This is a collection of cool projects made using Django. Each project has been a
 
 # Projects
 
+## Paperless-ngx
+
+Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep less paper.
+
+Repo: https://github.com/paperless-ngx/paperless-ngx
+
+## Netbox
+
+NetBox is a solution for modeling and documenting modern networks. Combines the traditional disciplines of IP address management (IPAM) and datacenter infrastructure management (DCIM) with APIs and extensions.
+
+Repo: https://github.com/netbox-community/netbox
+
+## TacticalRMM
+
+Tactical RMM is a remote monitoring & management tool
+
+Repo: https://github.com/amidaware/tacticalrmm
