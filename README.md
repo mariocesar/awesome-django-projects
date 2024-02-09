@@ -23,3 +23,9 @@ Repo: https://github.com/netbox-community/netbox
 Tactical RMM is a remote monitoring & management tool
 
 Repo: https://github.com/amidaware/tacticalrmm
+
+## LibrePhotos
+
+A self-hosted, open-source alternative to Google Photos.
+
+Repo: https://github.com/LibrePhotos/librephotos
