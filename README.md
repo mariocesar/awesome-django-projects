@@ -29,3 +29,7 @@ Repo: https://github.com/amidaware/tacticalrmm
 A self-hosted, open-source alternative to Google Photos.
 
 Repo: https://github.com/LibrePhotos/librephotos
+
+## DjangoPackages
+
+Repo: https://github.com/djangopackages/djangopackages
