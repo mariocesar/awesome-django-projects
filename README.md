@@ -33,3 +33,11 @@ Repo: https://github.com/LibrePhotos/librephotos
 ## DjangoPackages
 
 Repo: https://github.com/djangopackages/djangopackages
+
+Repo: https://github.com/PostHog/posthog
+
+Repo: https://github.com/wagtail/wagtail
+
+Repo: https://github.com/django-cms/django-cms
+
+Repo: https://github.com/coderedcorp/coderedcms
