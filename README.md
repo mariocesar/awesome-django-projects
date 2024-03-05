@@ -41,3 +41,5 @@ Repo: https://github.com/wagtail/wagtail
 Repo: https://github.com/django-cms/django-cms
 
 Repo: https://github.com/coderedcorp/coderedcms
+
+Repo: https://github.com/zulip/zulip/
