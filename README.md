@@ -42,4 +42,6 @@ Repo: https://github.com/django-cms/django-cms
 
 Repo: https://github.com/coderedcorp/coderedcms
 
-Repo: https://github.com/zulip/zulip/
+Repo: https://github.com/zulip/zulip
+
+Repo: https://github.com/makeplane/plane
