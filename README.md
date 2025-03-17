@@ -34,14 +34,17 @@ Repo: https://github.com/LibrePhotos/librephotos
 
 Repo: https://github.com/djangopackages/djangopackages
 
-Repo: https://github.com/PostHog/posthog
+## Docs
 
-Repo: https://github.com/wagtail/wagtail
+A collaborative note taking, wiki and documentation platform that scales. Built with Django and React. Opensource alternative to Notion or Outline.
 
-Repo: https://github.com/django-cms/django-cms
+Repo: https://github.com/suitenumerique/docs
 
-Repo: https://github.com/coderedcorp/coderedcms
+# TODO:
 
-Repo: https://github.com/zulip/zulip
-
-Repo: https://github.com/makeplane/plane
+- Repo: https://github.com/PostHog/posthog
+- Repo: https://github.com/wagtail/wagtail
+- Repo: https://github.com/django-cms/django-cms
+- Repo: https://github.com/coderedcorp/coderedcms
+- Repo: https://github.com/zulip/zulip
+- Repo: https://github.com/makeplane/plane
