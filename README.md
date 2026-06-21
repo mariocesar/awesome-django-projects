@@ -49,3 +49,4 @@ Repo: https://github.com/suitenumerique/docs
 - Repo: https://github.com/zulip/zulip
 - Repo: https://github.com/makeplane/plane
 - Repo: https://github.com/inventree/inventree
+- Repo: https://github.com/openedx/openedx-platform
