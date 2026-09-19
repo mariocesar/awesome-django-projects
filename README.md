@@ -141,6 +141,10 @@ Wagtail plus CodeRed Extensions, for building marketing sites fast. BSD-3-Clause
 - **Stack:** Django + Wagtail, Bootstrap 5, SASS with no Node.js required
 - **Go read:** how to build a reusable layer on top of Wagtail instead of forking it. Pre-built StreamField blocks, page types, form builder, event pages, SEO settings, all shipped as a package you install. If you keep rewriting the same marketing site, this is the pattern.
 
+## TODO:
+
+- https://github.com/vakahnke/Timeline
+
 ## Contributing
 
 If you know a Django project worth reading, open an issue or a PR. Tell me what it does and, more importantly, the specific thing in it you think someone should go read.
