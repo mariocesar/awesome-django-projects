@@ -144,6 +144,7 @@ Wagtail plus CodeRed Extensions, for building marketing sites fast. BSD-3-Clause
 ## TODO:
 
 - https://github.com/vakahnke/Timeline
+- https://github.com/getsentry/sentry
 
 ## Contributing
 
