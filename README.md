@@ -131,6 +131,16 @@ Self-hosted project planner with a Gantt timeline and reusable plan templates. A
 - **Stack:** Django 6.1 + DRF, PostgreSQL, React 19 + Vite
 - **Go read:** `backend/events/status_report.py`. Project status derived from the schedule by explicit rules, in plain Python outside the models and serializers. Young and single-maintainer, so read it before you depend on it.
 
+### ioe
+
+Retail store management: products, stock, checkout, members and reports. MIT.
+
+- **Repo:** https://github.com/zhtyyx/ioe
+- **Suggested by:** the maintainer, in [#2](https://github.com/mariocesar/awesome-django-projects/issues/2), with screenshots and more detail
+- **Stack:** Django, server-rendered templates with Bootstrap 5, SQLite
+- **Go read:** `sale_complete` and `sale_cancel` in `inventory/views/sales.py`. Check the status, lock the row, check again, then move stock, balance and points in one transaction. A plain, readable version of what every checkout needs.
+- **Keep in mind:** it ships with SQLite, where `select_for_update()` doesn't lock rows, so pair it with Postgres if you borrow the pattern. The maintainers are actively hardening it, and it's a nice project to contribute to.
+
 ## Frameworks and CMS toolkits
 
 These aren't products, they're things you build with. They're here because their internals are some of the best Django reading available.
