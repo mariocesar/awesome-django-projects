@@ -141,6 +141,40 @@ Retail store management: products, stock, checkout, members and reports. MIT.
 - **Go read:** `sale_complete` and `sale_cancel` in `inventory/views/sales.py`. Check the status, lock the row, check again, then move stock, balance and points in one transaction. A plain, readable version of what every checkout needs.
 - **Keep in mind:** it ships with SQLite, where `select_for_update()` doesn't lock rows, so pair it with Postgres if you borrow the pattern. The maintainers are actively hardening it, and it's a nice project to contribute to.
 
+### AWX
+
+Web UI, API and task engine for running Ansible, upstream of Red Hat Ansible Automation Platform. Apache-2.0.
+
+- **Repo:** https://github.com/ansible/awx
+- **Stack:** Django 5.2 + DRF, Channels, PostgreSQL, Redis, dispatcherd, Receptor; React UI in `ansible/ansible-ui`
+- **Go read:** `awx/main/dispatch/worker/callback.py`. Not your typical Celery setup, because there's no Celery at all. Tasks go through Postgres LISTEN/NOTIFY, and job events land in Redis, get batched into Postgres, and stream to the browser over Channels.
+- **Keep in mind:** releases are paused during a large refactor (the last one was July 2024), but development is active.
+
+### Saleor
+
+Headless e-commerce platform with a GraphQL API. BSD-3-Clause.
+
+- **Repo:** https://github.com/saleor/saleor
+- **Stack:** Django 5.2, Graphene 2 (no DRF), Celery, PostgreSQL, Redis
+- **Go read:** `saleor/graphql/core/dataloaders.py`. They make GraphQL actually work. A small DataLoader base, one instance per request, that resolvers use instead of hitting the ORM directly. That's how a schema this big avoids N+1 queries.
+
+### Read the Docs
+
+Builds and hosts documentation for most of the Python ecosystem. MIT.
+
+- **Repo:** https://github.com/readthedocs/readthedocs.org
+- **Stack:** Django 5.2 + DRF, Celery, PostgreSQL, Redis, Elasticsearch, S3, Docker
+- **Go read:** `readthedocs/core/unresolver.py` and `readthedocs/proxito/`. This project is a core part of the Python ecosystem, and this is how it serves all those docs. Any hostname and path resolves to a project, version and file, and nginx then serves it from S3 via `X-Accel-Redirect`, so no doc bytes pass through Python.
+
+### authentik
+
+Self-hosted identity provider: SSO with SAML, OIDC, LDAP and RADIUS.
+
+- **Repo:** https://github.com/goauthentik/authentik
+- **License:** MIT, except `authentik/enterprise/`, which needs a paid license in production
+- **Stack:** Django 5.2 + DRF, Channels, Dramatiq, PostgreSQL, Lit; Rust front server and Go outposts at the edges
+- **Go read:** `packages/django-postgres-cache`, `django-channels-postgres` and `django-dramatiq-postgres`. No Redis, no RabbitMQ: cache, websockets and the task queue all run on Postgres, each as a small package you could lift into your own project. After that, `authentik/flows/planner.py` for how they model multi-step logins.
+
 ## Frameworks and CMS toolkits
 
 These aren't products, they're things you build with. They're here because their internals are some of the best Django reading available.
