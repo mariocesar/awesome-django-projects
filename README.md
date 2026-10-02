@@ -74,6 +74,15 @@ Product analytics, session replay, feature flags, experiments. Open core.
 - **Stack:** Django, **ClickHouse** for analytics plus PostgreSQL for everything else, React/TypeScript, with Rust and Node services in the monorepo
 - **Go read:** Django as the control plane over a columnar database. The ORM handles users, teams and config. Event queries go to ClickHouse. This is the pattern you reach for when your data outgrows Postgres but you don't want to throw away Django, and there aren't many examples this size you can read. I also respect that the open/proprietary split is visible in one repo instead of hidden behind a private fork.
 
+### Sentry
+
+Error tracking and performance monitoring. Fair source.
+
+- **Repo:** https://github.com/getsentry/sentry
+- **License:** FSL-1.1-Apache-2.0, not open source
+- **Stack:** Django 5.2 + DRF, PostgreSQL, Redis, Kafka, ClickHouse via **Snuba**, Rust services (Relay, taskbroker), React + TypeScript
+- **Go read:** `src/sentry/hybridcloud/`. They split one monolith into control and cell databases for data residency, and keep them in sync with a transactional outbox instead of joins. The biggest example of breaking up a Django monolith without a rewrite.
+
 ### Zulip
 
 Team chat organized by topic. Apache 2.0.
@@ -114,6 +123,14 @@ Event management and ticketing for communities that care about privacy and safet
 - **Stack:** Python 3.14, Django 5.2 LTS with **Django Ninja**, PostgreSQL + PostGIS, Celery + Redis
 - **Go read:** it's one of the few production **Django Ninja** codebases you can read end to end. I used Ninja on a big app and liked the ergonomics a lot, so it's good to have a real example to point at. Type-annotated schemas instead of serializers, and you can judge the tradeoff yourself. Small enough to read in an afternoon, which makes it the best starting point on this list. The HMAC-signed URLs for protected files and the full LGTM observability setup are nice extras.
 
+### Seedcorn
+
+Self-hosted project planner with a Gantt timeline and reusable plan templates. Apache-2.0.
+
+- **Repo:** https://github.com/vakahnke/seedcorn (formerly `Timeline`)
+- **Stack:** Django 6.1 + DRF, PostgreSQL, React 19 + Vite
+- **Go read:** `backend/events/status_report.py`. Project status derived from the schedule by explicit rules, in plain Python outside the models and serializers. Young and single-maintainer, so read it before you depend on it.
+
 ## Frameworks and CMS toolkits
 
 These aren't products, they're things you build with. They're here because their internals are some of the best Django reading available.
@@ -140,11 +157,6 @@ Wagtail plus CodeRed Extensions, for building marketing sites fast. BSD-3-Clause
 - **Repo:** https://github.com/coderedcorp/coderedcms
 - **Stack:** Django + Wagtail, Bootstrap 5, SASS with no Node.js required
 - **Go read:** how to build a reusable layer on top of Wagtail instead of forking it. Pre-built StreamField blocks, page types, form builder, event pages, SEO settings, all shipped as a package you install. If you keep rewriting the same marketing site, this is the pattern.
-
-## TODO:
-
-- https://github.com/vakahnke/Timeline
-- https://github.com/getsentry/sentry
 
 ## Contributing
 
